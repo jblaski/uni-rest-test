@@ -3,6 +3,7 @@ package com.julianblaskiewicz.uniresttest;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /*  Headers and sample data:
@@ -16,6 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class LearningProvider {
     @Id
     private String id;
+    @Indexed(unique = true)
     private String UKPRN;
     private String providerName;
     private String alias;
